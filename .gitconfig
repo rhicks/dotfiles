@@ -1,0 +1,15 @@
+[user]
+    name = Richard Hicks
+    email = rhicks@nero.net
+[alias]
+    ci = commit -a
+    co = checkout
+    st = status -a
+    di = diff
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
