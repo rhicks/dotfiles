@@ -1,0 +1,95 @@
+# .procmailrc
+# # routes incoming mail to appropriate mailboxes
+# PATH=/usr/bin:/usr/local/bin
+# MAILDIR=$HOME/Maildir
+# DEFAULT=/var/spool/mail/rhicks
+# LOGFILE=/dev/null
+# SHELL=/bin/sh
+
+# Put mail for postmaster@nero.net into Archive/Postmaster folder
+# :0:
+# * ^To:.postmaster@nero.net
+# .Archive.Postmaster/
+
+SHELL=/bin/bash
+FGREP=/bin/fgrep
+FROM=`formail -x From:`
+SNDR=`formail -x Sender:`
+RCVD=`formail -c -x Received:`
+
+LOGFILE=$HOME/.procmail/log
+VERBOSE=off
+
+###
+##
+# Make backup just in case
+:0 c
+.Backup/
+
+###
+##
+# Eliminate duplicates
+#:0 Wh: $HOME/.msgid.lock 
+#| formail -D 8192 $HOME/.msgid.cache
+
+###
+##
+# Put Top ASN Report into Network Archive
+:0
+* ^Subject: Top ASN Report*
+.Archive.Network.ASN-Reports/
+
+###
+##
+# Put OpenNMS Reports into Archive/Network/OpenNMS Archive
+:0
+* ^Subject: OpenNMS Report*
+.Archive.Network.OpenNMS/
+
+###
+##
+# Handle operation-related email
+:0
+* ^To.*systems
+.Archive.Systems/
+
+###
+##
+#  Put mail for postmaster@nero.net into Archive/Postmaster folder
+:0
+* ^To:.*postmaster@nero.net
+.Archive.Postmaster/
+
+###
+##
+#  Put mail for webmaster@nero.net into Archive/Postmaster folder
+:0
+* ^To:.*webmaster@nero.net
+.Archive.Postmaster/
+
+
+###
+##
+# Testing
+:0
+* ^(From|Cc|To).*richard.hicks@gmail.com
+.Archive.Personal/
+
+
+##
+# spam detection via spamprobe
+#:0
+#SCORE=| /usr/bin/spamprobe train
+#
+#:0 wf
+#| formail -I "X-SpamProbe: $SCORE"
+#
+#:0 a:
+#* ^X-SpamProbe: SPAM
+#.Spam.auto-spam/
+
+##
+# Stuff to send to DEFAULT
+:0
+* ^Sender: owner-(is-staff|machineroom|sys-status)
+$DEFAULT
