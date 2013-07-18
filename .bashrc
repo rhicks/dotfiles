@@ -2,6 +2,8 @@ if [ "$TERM" != "screen" ]; then
     screen -xRR
 fi
 
+[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
+
 alias ll='ls -l --color'
 alias la='ls -la --color'
 alias geeknote='python $HOME/geeknote/geeknote.py'
@@ -9,7 +11,8 @@ alias todo='geeknote edit --note todo'
 alias nn='geeknote edit --note nero-notes'
 
 #PS1="[\d \t \u@\h:\w ] $ "
-PS1="[\D{%F} \t]\n\n\u@\h \w\n$ "
+#PS1="[\D{%F} \t]\n\n\u@\h \w\n$ "
+PS1='\n\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD\n\$ '
 
 ## export AA_P="export PVE=\"\\033[m\\033[38;5;2m\"\$(( \`sed -n \"s/MemFree:[\\t ]\\+\\([0-9]\\+\\) kB/\\1/p\" /proc/meminfo\` / 1024 ))\"\\033[38;5;22m/\"\$((\`sed -n \"s/MemTotal:[\\t ]\\+\\([0-9]\\+\\) kB/\\1/p\" /proc/meminfo\`/ 1024 ))MB\"\\t\\033[m\\033[38;5;55m\$(< /proc/loadavg)\\033[m\";echo -en \"\"" \
 ## export PROMPT_COMMAND="history -a;((\$SECONDS % 10==0 ))&&eval \"\$AA_P\";echo -en \"\$PVE\";" \
