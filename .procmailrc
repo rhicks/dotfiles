@@ -72,8 +72,8 @@ VERBOSE=off
 ##
 # Testing
 :0
-* ^(From|Cc|To).*richard.hicks@gmail.com
-.Archive.Personal/
+* ^To.*commits@nero.net
+.Archive.Systems.Commits/
 
 
 ##

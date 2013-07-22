@@ -9,6 +9,7 @@ alias la='ls -la --color'
 alias geeknote='python $HOME/geeknote/geeknote.py'
 alias todo='geeknote edit --note todo'
 alias nn='geeknote edit --note nero-notes'
+alias tracert='traceroute'
 
 #PS1="[\d \t \u@\h:\w ] $ "
 #PS1="[\D{%F} \t]\n\n\u@\h \w\n$ "
