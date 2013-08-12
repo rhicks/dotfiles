@@ -8,6 +8,7 @@
     di = diff
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lold = log --graph --decorate --pretty=format:"%h%x09%an%x09%ad%x09%s"
 [color]
     branch = auto
     diff = auto

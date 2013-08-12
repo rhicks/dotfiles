@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-:0 c
-.Backup/
+# :0 c
+# .Backup/
 
 ###
 ##
@@ -55,6 +55,21 @@ VERBOSE=off
 
 ###
 ##
+# Handle operation-related email
+:0
+* ^To.*root@link.nero.net
+.Archive.Systems/
+
+
+###
+##
+# Backup Reports
+:0
+* ^Subject: Commvault (is-vc-cs1)*
+.Archive.Systems.Backups/
+
+###
+##
 #  Put mail for postmaster@nero.net into Archive/Postmaster folder
 :0
 * ^To:.*postmaster@nero.net
@@ -66,6 +81,13 @@ VERBOSE=off
 :0
 * ^To:.*webmaster@nero.net
 .Archive.Postmaster/
+
+###
+##
+# Move NS Nagios messages to UO-NTS/Nagios
+:0
+* ^From:.*nagios@nms.uoregon.edu
+.Archive.UO-NTS.Nagios/
 
 
 ###

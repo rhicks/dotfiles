@@ -5,4 +5,6 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%
 # screen -t shell2        1
 # screen -t server        2
 #
-termcapinfo xterm* ti@:te@
+#do not use xterm's alternative window buffer it break scrollback
+termcapinfo xterm ti@:te@
+
