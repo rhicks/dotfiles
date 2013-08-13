@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-# :0 c
-# .Backup/
+:0 c
+.Backup/
 
 ###
 ##
@@ -92,10 +92,18 @@ VERBOSE=off
 
 ###
 ##
-# Testing
+# Move Commits to Systems/Commits
 :0
 * ^To.*commits@nero.net
 .Archive.Systems.Commits/
+
+ ###
+ #
+ # Move NS ItHep messages to UO-NTS/ithelp
+ :0
+ * ^From:.*nethelp@ithelp.uoregon.edu
+ .Archive.UO-NTS.ithelp/
+ 
 
 
 ##
