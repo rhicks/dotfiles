@@ -14,7 +14,7 @@ alias nn='geeknote edit --note nero-notes'
 alias home='geeknote edit --note home'
 alias tracert='traceroute'
 alias hm='hm.py'
-alias diff='diff -w -y'
+alias diffw='diff -w -y'
 
 function parse_git_branch { 
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
