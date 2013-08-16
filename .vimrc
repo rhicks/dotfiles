@@ -5,7 +5,7 @@ set list
 set number
 syntax enable
 "set background=dark
-"colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+"colorscheme molokai
 set showcmd
 set showmode
