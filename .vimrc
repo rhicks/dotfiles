@@ -4,7 +4,7 @@ set list listchars=tab:→\ ,trail:·
 set list
 set number
 syntax enable
-"set background=dark
+set background=dark
 colorscheme solarized
 "colorscheme molokai
 set showcmd
