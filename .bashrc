@@ -2,12 +2,26 @@
 ##    screen -xRR
 ## fi
 
+
+
 export PATH=$HOME/bin:$PATH
 
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
 
-alias ll='ls -l --color'
-alias la='ls -la --color'
+case $OSTYPE in
+	"darwin"*)
+		echo 'Its a Mac'
+		alias ll='ls -lG'
+		alias la='ls -laG'
+		;;
+	"linux-gnu")
+		echo 'Linux up in here'
+		alias ll='ls -l --color'
+		alias la='ls -la --color'
+		;;
+	*)
+esac
+
 alias geeknote='python $HOME/geeknote/geeknote.py'
 alias todo='geeknote edit --note todo'
 alias nn='geeknote edit --note nero-notes'
