@@ -1,13 +1,21 @@
-set t_Co=256
+"set t_Co=256
 set encoding=utf-8
-"set list listchars=tab:→\ ,trail:·
 " Use the same symbols as TextMate for tabstops and EOLs
- set listchars=tab:▸\ ,eol:¬
 set list
+set listchars=tab:▸\ ,eol:¬
 set number
 syntax enable
-set background=dark
-colorscheme solarized
-"colorscheme molokai
 set showcmd
 set showmode
+" Testing line 		more    
+
+set background=dark
+
+" solarized options 
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+"colorscheme solarized
+
+
+"colorscheme molokai
