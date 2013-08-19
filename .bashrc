@@ -10,12 +10,10 @@ export PATH=$HOME/bin:$PATH
 
 case $OSTYPE in
 	"darwin"*)
-		echo 'Its a Mac'
 		alias ll='ls -lG'
 		alias la='ls -laG'
 		;;
 	"linux-gnu")
-		echo 'Linux up in here'
 		alias ll='ls -l --color'
 		alias la='ls -la --color'
 		;;
