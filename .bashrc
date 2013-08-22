@@ -28,9 +28,9 @@ alias tracert='traceroute'
 alias hm='hm.py'
 alias diffw='diff -w -y'
 
-function parse_git_branch { 
-   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
-} 
+function parse_git_branch {
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
 function _git_prompt() {
     local git_status="`git status -unormal 2>&1`"
