@@ -3,8 +3,8 @@ syntax enable
 set t_Co=256
 set background=dark
 let g:solarized_termtrans = 1
-"colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+"colorscheme molokai
 
 
 " Font Settings
