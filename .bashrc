@@ -17,6 +17,10 @@ case $OSTYPE in
 		alias ll='ls -l --color'
 		alias la='ls -la --color'
 		;;
+  "cygwin")
+    alias ll='ls -l --color'
+    alias la='ls -la --color'
+    ;;
 	*)
 esac
 
