@@ -15,6 +15,12 @@ set encoding=utf8
 " Numbered lines.
 set number
 
+" Enable the statusline to always appear
+set laststatus=2
+let g:lightline = {
+        \ 'colorscheme': 'solarized',
+              \ }
+
 
 " Keep cursor away from edges of screen.
 set so=8
