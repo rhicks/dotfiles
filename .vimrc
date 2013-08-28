@@ -79,6 +79,12 @@ imap <left> <nop>
 imap <right> <nop>
 
 
+"Movement commands work as expected with linewrapping occurs
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
+
 " Command bar options
 set showmode
 set showcmd
