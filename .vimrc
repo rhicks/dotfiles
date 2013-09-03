@@ -1,3 +1,8 @@
+" Enable the statusline to always appear
+let g:lightline = {'colorscheme': 'solarized'}
+"let g:lightline.colorscheme = 'solarized'
+set laststatus=2
+
 " Colorscheme settings
 syntax enable
 set t_Co=256
@@ -14,12 +19,6 @@ set encoding=utf8
 
 " Numbered lines.
 set number
-
-" Enable the statusline to always appear
-set laststatus=2
-let g:lightline = {
-        \ 'colorscheme': 'solarized',
-              \ }
 
 
 " Keep cursor away from edges of screen.
@@ -65,7 +64,7 @@ autocmd BufWinLeave * call clearmatches()
 
 
 " Automatically leave insert mode after 'updatetime' (4s by default).
-au CursorHoldI * stopinsert
+" au CursorHoldI * stopinsert
 
 
 " Disable arrow keys.
