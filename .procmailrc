@@ -29,7 +29,7 @@ VERBOSE=off
 ###
 ##
 # Eliminate duplicates
-#:0 Wh: $HOME/.msgid.lock 
+#:0 Wh: $HOME/.msgid.lock
 #| formail -D 8192 $HOME/.msgid.cache
 
 ###
@@ -86,7 +86,7 @@ VERBOSE=off
 ##
 # Move NS Nagios messages to UO-NTS/Nagios
 :0
-* ^From:.*nagios@nms.uoregon.edu
+* ^From:.*uoregon@nms.uoregon.edu
 .Archive.UO-NTS.Nagios/
 
 
@@ -103,7 +103,7 @@ VERBOSE=off
  :0
  * ^From:.*nethelp@ithelp.uoregon.edu
  .Archive.UO-NTS.ithelp/
- 
+
 
 
 ##
