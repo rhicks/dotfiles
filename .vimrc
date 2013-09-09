@@ -28,7 +28,7 @@ set so=8
 " Add tab and eol tags
 set list
 "set listchars=tab:▸\
-set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:▸\ ,trail:·,extends:>,precedes:<
 
 
 " Highlight cursor line.
