@@ -7,9 +7,9 @@ set laststatus=2
 syntax enable
 set t_Co=256
 set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
-"colorscheme molokai
+"let g:solarized_termtrans = 1
+"colorscheme solarized
+colorscheme molokai
 
 
 " Font Settings
@@ -27,7 +27,8 @@ set so=8
 
 " Add tab and eol tags
 set list
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\
+set listchars=eol:¬,tab:▸\ ,trail:~,extends:>,precedes:<
 
 
 " Highlight cursor line.
