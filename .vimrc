@@ -24,6 +24,7 @@ set number
 " Keep cursor away from edges of screen.
 set so=8
 
+
 " Add tab and eol tags
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -84,6 +85,10 @@ noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
+
 " Command bar options
 set showmode
 set showcmd
+
+" set paste to remove unwanted tabs when pasting text from outside VIM
+set paste
