@@ -6,14 +6,14 @@ set laststatus=2
 " Colorscheme settings
 syntax enable
 set t_Co=256
-set background=dark
+"set background=dark
 "let g:solarized_termtrans = 1
-"colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+"colorscheme molokai
 
 
 " Font Settings
-set guifont=Consolas:h11
+"set guifont=Consolas:h11
 set encoding=utf8
 
 
@@ -26,7 +26,7 @@ set so=8
 
 
 " Add tab and eol tags
-set list
+"set list
 "set listchars=tab:▸\
 set listchars=eol:¬,tab:▸\ ,trail:·,extends:>,precedes:<
 
