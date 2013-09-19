@@ -32,6 +32,12 @@ alias nn='geeknote edit --note nero-notes'
 alias home='geeknote edit --note home'
 alias hm='hm.py'
 alias diffw='diff -w -y'
+alias warin='whois -h whois.arin.net'
+alias wgeek='whois -h whois.geektools.com'
+alias wnetsol='whois -h whois.networksolutions.com'
+alias wripe='whois -h whois.ripe.net'
+alias wapnic='whois -h whois.apnic.net'
+alias wradb='whois -h whois.radb.net'
 
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
