@@ -18,6 +18,7 @@ case $OSTYPE in
 		alias ll='ls -l --color'
 		alias la='ls -la --color'
     alias tracert='traceroute'
+    alias lscreen='screen /dev/ttyUSB0 9600'
 		;;
   "cygwin")
     alias ll='ls -l --color'
