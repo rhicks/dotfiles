@@ -19,6 +19,7 @@ case $OSTYPE in
 		alias la='ls -la --color'
     alias tracert='traceroute'
     alias lscreen='screen /dev/ttyUSB0 9600'
+    alias porthole='/home/rhicks/Repo/systems/scripts/gnt-vnc-connect.py -n porthole.nero.net -c eugn-gnt.nero.net'
 		;;
   "cygwin")
     alias ll='ls -l --color'
