@@ -100,10 +100,16 @@ VERBOSE=off
  ###
  #
  # Move NS ItHep messages to UO-NTS/ithelp
- :0
- * ^From:.*nethelp@ithelp.uoregon.edu
- .Archive.UO-NTS.ithelp/
+:0
+* ^From:.*nethelp@ithelp.uoregon.edu
+.Archive.UO-NTS.ithelp/
 
+###
+##
+# Move Internet2 NOC to Internet2 Folder
+:0
+* ^From:.*noc@ithelp.uoregon.edu
+.Archive.Network.Internet2
 
 
 ##
