@@ -49,8 +49,8 @@ set ttymouse=xterm2
 
 " Tab settings.
 set expandtab
-set shiftwidth=2
-set ts=2
+set shiftwidth=4
+set ts=4
 set smarttab
 set cindent
 let indent_guides_enable_on_vim_startup = 1

@@ -109,7 +109,7 @@ VERBOSE=off
 # Move Internet2 NOC to Internet2 Folder
 :0
 * ^From:.*noc@ithelp.uoregon.edu
-.Archive.Network.Internet2
+.Archive.Network.Internet2/
 
 
 ##
