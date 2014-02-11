@@ -50,7 +50,7 @@ VERBOSE=off
 ##
 # Handle operation-related email
 :0
-* ^To.*systems
+* ^To.*systems@nero.net
 .Archive.Systems/
 
 ###
