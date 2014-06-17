@@ -41,6 +41,13 @@ VERBOSE=off
 
 ###
 ##
+# Put Confluence into Confluence Archive
+:0
+* ^From:.*confluence@.uoregon.edu
+.Archive.UO-NTS.Confluence/
+
+###
+##
 # Put OpenNMS Reports into Archive/Network/OpenNMS Archive
 :0
 * ^Subject: OpenNMS Report*
