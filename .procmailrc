@@ -67,6 +67,9 @@ VERBOSE=off
 * ^To.*root@link.nero.net
 .Archive.Systems/
 
+:0
+* ^To.*root@netfoo.nero.net
+.Archive.Systems/
 
 ###
 ##
