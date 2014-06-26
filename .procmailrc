@@ -55,6 +55,13 @@ VERBOSE=off
 
 ###
 ##
+# Move crash reports to systems
+:0
+* ^Subject: [abrt]*
+.Archive.Systems/
+
+###
+##
 # Handle operation-related email
 :0
 * ^To.*systems@nero.net
