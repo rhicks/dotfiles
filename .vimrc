@@ -1,3 +1,10 @@
+" Use Pathogen to manage addons in  the .vim/bundle folder
+execute pathogen#infect()
+execute pathogen#helptags()
+
+" Ingnore PEP8 Long line errors
+let g:flake8_max_line_length=1024
+
 " Enable the statusline to always appear
 let g:lightline = {'colorscheme': 'solarized'}
 "let g:lightline.colorscheme = 'solarized'
@@ -26,9 +33,10 @@ set so=8
 
 
 " Add tab and eol tags
-"set list
+set list
 "set listchars=tab:▸\
-set listchars=eol:¬,tab:▸\ ,trail:·,extends:>,precedes:<
+"set listchars=eol:¬,tab:▸\ ,trail:·,extends:>,precedes:<
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 
 " Highlight cursor line.
@@ -52,8 +60,26 @@ set expandtab
 set shiftwidth=4
 set ts=4
 set smarttab
-set cindent
-let indent_guides_enable_on_vim_startup = 1
+"set cindent
+"let indent_guides_enable_on_vim_startup = 1
+
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                  "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
 
 
 " Make trailing whitespace annoyingly highlighted.
