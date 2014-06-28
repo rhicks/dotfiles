@@ -19,6 +19,8 @@ case $OSTYPE in
 		alias ll='ls -l --color'
 		alias la='ls -la --color'
     alias tracert='traceroute'
+    alias lscreen='screen /dev/ttyUSB0 9600'
+    alias porthole='/home/rhicks/Repo/systems/scripts/gnt-vnc-connect.py -n porthole.nero.net -c eugn-gnt.nero.net'
 		;;
   "cygwin")
     alias ll='ls -l --color'
@@ -33,6 +35,12 @@ alias nn='geeknote edit --note nero-notes'
 alias home='geeknote edit --note home'
 alias hm='hm.py'
 alias diffw='diff -w -y'
+alias whoarin='whois -h whois.arin.net'
+alias whogeek='whois -h whois.geektools.com'
+alias whonetsol='whois -h whois.networksolutions.com'
+alias whoripe='whois -h whois.ripe.net'
+alias whoapnic='whois -h whois.apnic.net'
+alias whoradb='whois -h whois.radb.net'
 
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
