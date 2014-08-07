@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-# :0 c
-# .Backup/
+:0 c
+.Backup/
 
 ###
 ##
@@ -49,9 +49,9 @@ VERBOSE=off
 ###
 ##
 # Put OpenNMS Reports into Archive/Network/OpenNMS Archive
-:0
-* ^Subject: OpenNMS Report*
-.Archive.Network.OpenNMS/
+#:0
+#* ^Subject: OpenNMS Report*
+#.Archive.Network.OpenNMS/
 
 ###
 ##
@@ -120,6 +120,20 @@ VERBOSE=off
 :0
 * ^From:.*noc@ithelp.uoregon.edu
 .Archive.Network.Internet2/
+
+###
+##
+# Move Rancid messages to rancid folder
+:0
+* ^From:.*rancid@nero.net
+.Archive.Network.Rancid/
+
+###
+##
+# Move OpenNMS message to openmns folder
+#:0
+#* ^From:.*opennms@nero.net
+#.Archive.Network.OpenNMS/
 
 
 ##
