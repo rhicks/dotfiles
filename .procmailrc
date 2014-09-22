@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-:0 c
-.Backup/
+#:0 c
+#.Backup/
 
 ###
 ##
