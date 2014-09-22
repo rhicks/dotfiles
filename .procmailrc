@@ -50,7 +50,7 @@ VERBOSE=off
 ##
 # Put deptcomp into deptcomp
 :0
-* ^Subject: Re:deptcomp*
+* ^Subject: Re: deptcomp*
 .Archive.Network.deptcomp/
 
 ###
