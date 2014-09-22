@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-#:0 c
-#.Backup/
+:0 c
+.Backup/
 
 ###
 ##
@@ -41,6 +41,41 @@ VERBOSE=off
 
 ###
 ##
+# Put deptcomp into deptcomp
+:0
+* ^Subject: deptcomp*
+.Archive.Network.deptcomp/
+
+###
+##
+# Put deptcomp into deptcomp
+:0
+* ^Subject: Re:deptcomp*
+.Archive.Network.deptcomp/
+
+###
+##
+# Move abuse to abuse
+:0
+* ^Subject: NERO Daily Abuse Report*
+.Archive.Network.Abuse/
+
+###
+##
+# Move backups to systems
+:0
+* ^Subject: Backup Job Summary Report*
+.Archive.Systems/
+
+###
+##
+# Move Cron to systems
+:0
+* ^Subject: Cron*
+.Archive.Systems/
+
+###
+##
 # Put Confluence into Confluence Archive
 :0
 * ^From:.*confluence@.uoregon.edu
@@ -49,9 +84,9 @@ VERBOSE=off
 ###
 ##
 # Put OpenNMS Reports into Archive/Network/OpenNMS Archive
-#:0
-#* ^Subject: OpenNMS Report*
-#.Archive.Network.OpenNMS/
+:0
+* ^Subject: OpenNMS Report*
+.Archive.Network.OpenNMS/
 
 ###
 ##
@@ -111,7 +146,7 @@ VERBOSE=off
  #
  # Move NS ItHep messages to UO-NTS/ithelp
 :0
-* ^From:.*nethelp@ithelp.uoregon.edu
+* ^From:.*@ithelp.uoregon.edu
 .Archive.UO-NTS.ithelp/
 
 ###
@@ -123,10 +158,39 @@ VERBOSE=off
 
 ###
 ##
+# Move UO Netdot to UO Netdot
+:0
+* ^From: netdot-admin@network-services.uoregon.edu
+.Archive.UO-NTS.Netdot/
+
+###
+##
+# Move RADB to RADB
+:0
+* ^From: *@radb.net
+.Archive.Network.RADB/
+
+###
+##
+# Move BMCC Rancid messages to rancid folder
+:0
+* ^From:.*rancid@nms.bluecc.edu
+.Archive.Network.Rancid/
+
+###
+##
+# Move BMCC NMS messages to Systems
+:0
+* ^From:.*@nms.bluecc.edu
+.Archive.Systems/
+
+###
+##
 # Move Rancid messages to rancid folder
 :0
 * ^From:.*rancid@nero.net
 .Archive.Network.Rancid/
+
 
 ###
 ##
