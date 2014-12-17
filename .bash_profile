@@ -5,3 +5,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # source ~/.bash_gitprompt
+export PATH=/usr/local/sbin:$PATH
