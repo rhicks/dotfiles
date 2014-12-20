@@ -2,8 +2,10 @@
 ##    screen -xRR
 ## fi
 
+# PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
-export TERM=screen-it
+# export TERM=screen-it
+export PANEL_FIFO="/tmp/panel-fifo"
 export PATH=$HOME/bin:$PATH
 export WORKON_HOME=~/Code/Envs
 
