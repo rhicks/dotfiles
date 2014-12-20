@@ -71,7 +71,8 @@ function _git_prompt() {
     fi
 }
 function _prompt_command() {
-    PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
+    PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD \n\$ '
+    # PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
 }
 PROMPT_COMMAND=_prompt_command
 
