@@ -5,6 +5,8 @@
 # PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 # export TERM=screen-it
+# export TERM=vt100
+# export TERM=xterm-256color
 export PANEL_FIFO="/tmp/panel-fifo"
 export PATH=$HOME/bin:$PATH
 export WORKON_HOME=~/Code/Envs
@@ -12,24 +14,24 @@ export WORKON_HOME=~/Code/Envs
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
 
 case $OSTYPE in
-	"darwin"*)
-		alias ll='ls -lG'
-		alias la='ls -laG'
-    alias tracert='traceroute'
-		;;
-	"linux-gnu")
-		alias ll='ls -l --color'
-		alias la='ls -la --color'
-        alias ls='ls --color'
-    alias tracert='traceroute'
-    alias lscreen='screen /dev/ttyUSB0 9600'
-    alias porthole='/home/rhicks/Repo/systems/scripts/gnt-vnc-connect.py -n porthole.nero.net -c eugn-gnt.nero.net'
-		;;
-  "cygwin")
-    alias ll='ls -l --color'
-    alias la='ls -la --color'
+    "darwin"*)
+        alias ll='ls -lG'
+        alias la='ls -laG'
+        alias tracert='traceroute'
     ;;
-	*)
+    "linux-gnu")
+        alias ll='ls -l --color'
+        alias la='ls -la --color'
+        alias ls='ls --color'
+        alias tracert='traceroute'
+        alias lscreen='screen /dev/ttyUSB0 9600'
+        alias porthole='/home/rhicks/Repo/systems/scripts/gnt-vnc-connect.py -n porthole.nero.net -c eugn-gnt.nero.net'
+    ;;
+    "cygwin")
+        alias ll='ls -l --color'
+        alias la='ls -la --color'
+    ;;
+    *)
 esac
 
 alias geeknote='python $HOME/geeknote/geeknote.py'
