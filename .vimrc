@@ -13,10 +13,14 @@ set laststatus=2
 " Colorscheme settings
 syntax enable
 set t_Co=256
-set background=light
-"let g:solarized_termtrans = 1
+set background=dark
+"let g:solarized_termtrans = 0
 "colorscheme solarized
-colorscheme molokai
+"colorscheme molokai
+"colorscheme slate
+"colorscheme delek
+"colorscheme vimbrant
+colorscheme harlequin
 
 
 " Font Settings
