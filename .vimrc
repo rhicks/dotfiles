@@ -16,11 +16,11 @@ set t_Co=256
 set background=dark
 "let g:solarized_termtrans = 0
 "colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
 "colorscheme slate
 "colorscheme delek
 "colorscheme vimbrant
-colorscheme harlequin
+"colorscheme harlequin
 
 
 " Font Settings
