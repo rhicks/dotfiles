@@ -16,10 +16,10 @@ syntax enable
 "set background=dark
 "let g:solarized_termtrans = 0
 "colorscheme solarized
-colorscheme molokai
+"colorscheme molokai
 "colorscheme slate
 "colorscheme delek
-"colorscheme vimbrant
+colorscheme vimbrant
 "colorscheme harlequin
 
 

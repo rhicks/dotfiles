@@ -7,6 +7,8 @@
 # export TERM=screen-it
 # export TERM=vt100
 # export TERM=xterm-256color
+export PANEL_HEIGHT=24
+#export PANEL_FONT_FAMILY="-xos4-terminus-*-r-*-*-*-*-*-*-*-*-*-1,-misc-dejavu sans mono-medium-r-normal--11-*-*-*-m-*-iso10646-1"
 export PANEL_FIFO="/tmp/panel-fifo"
 export PATH=$HOME/bin:$PATH
 export WORKON_HOME=~/Code/Envs
