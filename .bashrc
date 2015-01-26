@@ -36,7 +36,7 @@ case $OSTYPE in
     *)
 esac
 
-alias geeknote='python $HOME/geeknote/geeknote.py'
+alias geeknote='python $HOME/geeknote/geeknote/geeknote.py'
 alias todo='geeknote edit --note todo'
 alias nn='geeknote edit --note nero-notes'
 alias home='geeknote edit --note home'

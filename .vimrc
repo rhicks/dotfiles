@@ -6,20 +6,22 @@ execute pathogen#helptags()
 let g:flake8_max_line_length=1024
 
 " Enable the statusline to always appear
-"let g:lightline = {'colorscheme': 'solarized'}
+let g:lightline = {'colorscheme': 'solarized'}
 "let g:lightline = {'colorscheme': 'molokai'}
 set laststatus=2
 
 " Colorscheme settings
 syntax enable
 "set t_Co=256
+set t_Co=16
 "set background=dark
-"let g:solarized_termtrans = 0
-"colorscheme solarized
+"set background=light
+let g:solarized_termtrans = 0
+colorscheme solarized
 "colorscheme molokai
 "colorscheme slate
 "colorscheme delek
-colorscheme vimbrant
+"colorscheme vimbrant
 "colorscheme harlequin
 
 
