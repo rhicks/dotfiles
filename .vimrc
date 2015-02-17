@@ -15,7 +15,7 @@ syntax enable
 "set t_Co=256
 set t_Co=16
 "set background=dark
-"set background=light
+set background=light
 let g:solarized_termtrans = 0
 colorscheme solarized
 "colorscheme molokai
