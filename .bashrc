@@ -82,4 +82,4 @@ PROMPT_COMMAND=_prompt_command
 
 # export PS1='\n\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
 #source ~/.autoenv/activate.sh
-#source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/bin/virtualenvwrapper.sh
