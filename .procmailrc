@@ -23,21 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-:0 c
-.Backup/
-
-###
-##
-# Run all mail through spamassassin
-:0fw: spamassassin.lock
-| /usr/bin/spamassassin
-
-###
-##
-# Move spam to spam folder
-:0:
-* ^X-Spam-Status: Yes
-.Spam/
+#:0 c
+#.Backup/
 
 ###
 ##
@@ -49,7 +36,7 @@ VERBOSE=off
 ##
 # Put ACPE into ACPE
 :0
-* ^From: acpe@acpenw.org
+* ^Subject: (acpe)*
 .Archive.Vendors.ACPE/
 
 ###
@@ -211,6 +198,19 @@ VERBOSE=off
 * ^From:.*rancid@nero.net
 .Archive.Network.Rancid/
 
+
+###
+##
+# Run all mail through spamassassin
+:0fw: spamassassin.lock
+| /usr/bin/spamassassin
+
+###
+##
+# Move spam to spam folder
+:0:
+* ^X-Spam-Status: Yes
+.Spam/
 
 ###
 ##
