@@ -23,8 +23,8 @@ VERBOSE=off
 ###
 ##
 # Make backup just in case
-#:0 c
-#.Backup/
+:0 c
+.Backup/
 
 ###
 ##
@@ -44,6 +44,13 @@ VERBOSE=off
 # Eliminate duplicates
 #:0 Wh: $HOME/.msgid.lock
 #| formail -D 8192 $HOME/.msgid.cache
+
+###
+##
+# Put ACPE into ACPE
+:0
+* ^From: acpe@acpenw.org
+.Archive.Vendors.ACPE/
 
 ###
 ##
