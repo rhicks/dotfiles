@@ -28,6 +28,19 @@ VERBOSE=off
 
 ###
 ##
+# Run all mail through spamassassin
+:0fw: spamassassin.lock
+| /usr/bin/spamassassin
+
+###
+##
+# Move spam to spam folder
+:0:
+* ^X-Spam-Status: Yes
+.Spam/
+
+###
+##
 # Eliminate duplicates
 #:0 Wh: $HOME/.msgid.lock
 #| formail -D 8192 $HOME/.msgid.cache
