@@ -35,9 +35,9 @@ VERBOSE=off
 ###
 ##
 # Put ACPE into ACPE
-:0
-* ^Subject: (acpe)*
-.Archive.Vendors.ACPE/
+#:0
+#* ^Subject: (acpe)*
+#.Archive.Vendors.ACPE/
 
 ###
 ##
@@ -80,6 +80,13 @@ VERBOSE=off
 :0
 * ^Subject: Cron*
 .Archive.Systems/
+
+###
+##
+# Keep Level3 email in the Inbox
+:0
+* ^From:.*@level3.com
+$DEFAULT
 
 ###
 ##
@@ -197,7 +204,6 @@ VERBOSE=off
 :0
 * ^From:.*rancid@nero.net
 .Archive.Network.Rancid/
-
 
 ###
 ##
