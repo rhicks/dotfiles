@@ -48,6 +48,16 @@ alias whoripe='whois -h whois.ripe.net'
 alias whoapnic='whois -h whois.apnic.net'
 alias whoradb='whois -h whois.radb.net'
 
+        RED="\[\033[0;31m\]"
+     YELLOW="\[\033[1;33m\]"
+      GREEN="\[\033[0;32m\]"
+       BLUE="\[\033[1;34m\]"
+  LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+      WHITE="\[\033[1;37m\]"
+ LIGHT_GRAY="\[\033[0;37m\]"
+ COLOR_NONE="\[\e[0m\]"
+
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -73,13 +83,24 @@ function _git_prompt() {
         echo -n '\[\e[0;37;'"$ansi"';1m\]'"$branch"'\[\e[0m\] '
     fi
 }
+
+ # Determine active Python virtualenv details.
+ function set_virtualenv () {
+   if test -z "$VIRTUAL_ENV" ; then
+       PYTHON_VIRTUALENV=""
+   else
+       PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+   fi
+ }
+
 function _prompt_command() {
-    PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD \n\$ '
-    # PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
+    set_virtualenv
+    # PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD \n\$ '
+    PS1="\n`_git_prompt`"'\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '"${PYTHON_VIRTUALENV}"
 }
 PROMPT_COMMAND=_prompt_command
 
 
 # export PS1='\n\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
-#source ~/.autoenv/activate.sh
-#source /usr/bin/virtualenvwrapper.sh
+source /usr/bin/activate.sh
+source /usr/bin/virtualenvwrapper.sh
