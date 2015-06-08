@@ -22,8 +22,8 @@ case $OSTYPE in
         alias tracert='traceroute'
     ;;
     "linux-gnu")
-        alias ll='ls -l --color'
-        alias la='ls -la --color'
+        alias ll='ls -lh --color'
+        alias la='ls -lah --color'
         alias ls='ls --color'
         alias tracert='traceroute'
         alias lscreen='screen /dev/ttyUSB0 9600'
