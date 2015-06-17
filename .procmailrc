@@ -90,6 +90,13 @@ $DEFAULT
 
 ###
 ##
+# Keep OSU email in the Inbox
+:0
+* ^From:.*@oregonstate.edu
+$DEFAULT
+
+###
+##
 # Put Confluence into Confluence Archive
 :0
 * ^From:.*confluence@.uoregon.edu
