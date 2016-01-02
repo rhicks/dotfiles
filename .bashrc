@@ -20,6 +20,8 @@ case $OSTYPE in
         alias ll='ls -lG'
         alias la='ls -laG'
         alias tracert='traceroute'
+        # source /usr/local/bin/activate.sh
+        source /usr/local/bin/virtualenvwrapper.sh
     ;;
     "linux-gnu")
         alias ll='ls -lh --color'
@@ -28,6 +30,8 @@ case $OSTYPE in
         alias tracert='traceroute'
         alias lscreen='screen /dev/ttyUSB0 9600'
         alias porthole='/home/rhicks/Repo/systems/scripts/gnt-vnc-connect.py -n porthole.nero.net -c eugn-gnt.nero.net'
+        # source /usr/bin/activate.sh
+        source /usr/bin/virtualenvwrapper.sh
     ;;
     "cygwin")
         alias ll='ls -l --color'
@@ -102,5 +106,3 @@ PROMPT_COMMAND=_prompt_command
 
 
 # export PS1='\n\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD `parse_git_branch` \n\$ '
-source /usr/bin/activate.sh
-source /usr/bin/virtualenvwrapper.sh
