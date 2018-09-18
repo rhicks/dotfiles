@@ -1,6 +1,6 @@
 [user]
     name = Richard Hicks
-    email = rhicks@nero.net
+	email = rhicks@nero.net
 [alias]
     ci = commit -a
     co = checkout

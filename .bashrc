@@ -17,8 +17,8 @@ export WORKON_HOME=~/Code/Envs
 
 case $OSTYPE in
     "darwin"*)
-        alias ll='ls -lG'
-        alias la='ls -laG'
+        alias ll='ls -lhG'
+        alias la='ls -laGh'
         alias tracert='traceroute'
         # source /usr/local/bin/activate.sh
         source /usr/local/bin/virtualenvwrapper.sh
