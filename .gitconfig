@@ -1,1 +1,21 @@
-/Users/rhicks/Repo/dotfiles/.gitconfig
+[user]
+    name = Richard Hicks
+	email = rhicks@nero.net
+[alias]
+    ci = commit -a
+    co = checkout
+    st = status -a
+    di = diff
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lold = log --graph --decorate --pretty=format:"%h%x09%an%x09%ad%x09%s"
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[push]
+	default = simple
+[core]
+	filemode = false
+	excludesfile = ~/.gitignore-global

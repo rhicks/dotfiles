@@ -1,1 +1,252 @@
-Repo/dotfiles/.procmailrc
+# .procmailrc
+# # routes incoming mail to appropriate mailboxes
+# PATH=/usr/bin:/usr/local/bin
+# MAILDIR=$HOME/Maildir
+# DEFAULT=/var/spool/mail/rhicks
+# LOGFILE=/dev/null
+# SHELL=/bin/sh
+
+# Put mail for postmaster@nero.net into Archive/Postmaster folder
+# :0:
+# * ^To:.postmaster@nero.net
+# .Archive.Postmaster/
+
+SHELL=/bin/bash
+FGREP=/bin/fgrep
+FROM=`formail -x From:`
+SNDR=`formail -x Sender:`
+RCVD=`formail -c -x Received:`
+
+LOGFILE=$HOME/.procmail/log
+VERBOSE=off
+
+###
+##
+# Make backup just in case
+#:0 c
+#.Backup/
+
+###
+##
+# Eliminate duplicates
+#:0 Wh: $HOME/.msgid.lock
+#| formail -D 8192 $HOME/.msgid.cache
+
+###
+##
+# Put ACPE into ACPE
+#:0
+#* ^Subject: (acpe)*
+#.Archive.Vendors.ACPE/
+
+###
+##
+# Put Top ASN Report into Network Archive
+:0
+* ^Subject: Top ASN Report*
+.Archive.Network.ASN-Reports/
+
+###
+##
+# Put deptcomp into deptcomp
+:0
+* ^Subject: deptcomp*
+.Archive.Network.deptcomp/
+
+###
+##
+# Put deptcomp into deptcomp
+:0
+* ^Subject: Re: deptcomp*
+.Archive.Network.deptcomp/
+
+###
+##
+# Move abuse to abuse
+:0
+* ^Subject: NERO Daily Abuse Report*
+.Archive.Network.Abuse/
+
+###
+##
+# Move backups to systems
+:0
+* ^Subject: Backup Job Summary Report*
+.Archive.Systems/
+
+###
+##
+# Move Cron to systems
+:0
+* ^Subject: Cron*
+.Archive.Systems/
+
+###
+##
+# Keep Level3 email in the Inbox
+:0
+* ^From:.*@level3.com
+$DEFAULT
+
+###
+##
+# Keep OSU email in the Inbox
+:0
+* ^From:.*@oregonstate.edu
+$DEFAULT
+
+###
+##
+# Put Confluence into Confluence Archive
+:0
+* ^From:.*confluence@.uoregon.edu
+.Archive.UO-NTS.Confluence/
+
+###
+##
+# Put OpenNMS Reports into Archive/Network/OpenNMS Archive
+:0
+* ^Subject: OpenNMS Report*
+.Archive.Network.OpenNMS/
+
+###
+##
+# Handle operation-related email
+:0
+* ^To.*systems@nero.net
+.Archive.Systems/
+
+###
+##
+# Handle operation-related email
+:0
+* ^To.*root@link.nero.net
+.Archive.Systems/
+
+:0
+* ^To.*root@netfoo.nero.net
+.Archive.Systems/
+
+###
+##
+# Backup Reports
+:0
+* ^Subject: Commvault (is-vc-cs1)*
+.Archive.Systems.Backups/
+
+###
+##
+#  Put mail for postmaster@nero.net into Archive/Postmaster folder
+:0
+* ^To:.*postmaster@nero.net
+.Archive.Postmaster/
+
+###
+##
+#  Put mail for webmaster@nero.net into Archive/Postmaster folder
+:0
+* ^To:.*webmaster@nero.net
+.Archive.Postmaster/
+
+###
+##
+# Move NS Nagios messages to UO-NTS/Nagios
+:0
+* ^From:.*uoregon@nms.uoregon.edu
+.Archive.UO-NTS.Nagios/
+
+
+###
+##
+# Move Commits to Systems/Commits
+:0
+* ^To.*commits@nero.net
+.Archive.Systems.Commits/
+
+###
+##
+# Move Internet2 NOC to Internet2 Folder
+:0
+* ^From:.*noc@ithelp.uoregon.edu
+.Archive.Network.Internet2/
+
+###
+ #
+ # Move NS ItHep messages to UO-NTS/ithelp
+:0
+* ^From:.*@ithelp.uoregon.edu
+.Archive.UO-NTS.ithelp/
+
+###
+##
+# Move UO Netdot to UO Netdot
+:0
+* ^From: netdot-admin@network-services.uoregon.edu
+.Archive.UO-NTS.Netdot/
+
+###
+##
+# Move RADB to RADB
+:0
+* ^From: *@radb.net
+.Archive.Network.RADB/
+
+###
+##
+# Move BMCC Rancid messages to rancid folder
+:0
+* ^From:.*rancid@nms.bluecc.edu
+.Archive.Network.Rancid/
+
+###
+##
+# Move BMCC NMS messages to Systems
+:0
+* ^From:.*@nms.bluecc.edu
+.Archive.Systems/
+
+###
+##
+# Move Rancid messages to rancid folder
+:0
+* ^From:.*rancid@nero.net
+.Archive.Network.Rancid/
+
+###
+##
+# Run all mail through spamassassin
+:0fw: spamassassin.lock
+| /usr/bin/spamassassin
+
+###
+##
+# Move spam to spam folder
+:0:
+* ^X-Spam-Status: Yes
+.Spam/
+
+###
+##
+# Move OpenNMS message to openmns folder
+#:0
+#* ^From:.*opennms@nero.net
+#.Archive.Network.OpenNMS/
+
+
+##
+# spam detection via spamprobe
+#:0
+#SCORE=| /usr/bin/spamprobe train
+#
+#:0 wf
+#| formail -I "X-SpamProbe: $SCORE"
+#
+#:0 a:
+#* ^X-SpamProbe: SPAM
+#.Spam.auto-spam/
+
+##
+# Stuff to send to DEFAULT
+:0
+* ^Sender: owner-(is-staff|machineroom|sys-status)
+$DEFAULT
